@@ -6,3 +6,4 @@ A few tweaks -
         - base css file, add another css file with the "myCss" variable
         - message keys array instead of listing them out manually
     - patched with the fixes noted here: https://www.youtube.com/watch?v=eDWPJAzlBfM&feature=youtu.be
+    - seed database includes authors
