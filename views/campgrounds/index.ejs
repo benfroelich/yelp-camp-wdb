@@ -1,0 +1,33 @@
+<%include ../partials/header%>
+<header class="jumbotron">
+    <h1>Campgrounds</h1>
+    <p>here are some campgrounds do</p>
+    <p>
+        <a class="btn btn-primary btn-lg" href="campgrounds/new">Add a campground</a>
+    </p>
+</header>
+
+<div class="row">
+    <% campgrounds.forEach(function(campground, i) { %>
+        <% if(i > 0 && !(i % 2)) {%>
+            <!-- add a clearfix element for small sized viewports to keep wrapping working -->
+            <!-- see https://getbootstrap.com/docs/3.3/css/#grid-responsive-resets -->
+            <div class="clearfix visible-sm-block"></div>
+        <% } %>
+        <% if(i > 0 && !(i % 4)) {%>
+            <!-- add a clearfix element for medium sized viewports to keep wrapping working -->
+            <!-- see https://getbootstrap.com/docs/3.3/css/#grid-responsive-resets -->
+            <div class="clearfix visible-md-block"></div>
+        <% } %>
+        <!-- the actual thumbnail entry -->
+        <div class="col-md-3 col-sm-6" >
+            <a href="/campgrounds/<%= campground._id %>" class="thumbnail">
+                <img class="campground-thumb" src="<%= campground.imageUrl %>">
+                <div class="caption">
+                    <h4> <%= campground.name %> </h4>
+                </div>
+            </a>
+        </div>
+    <% }); %>
+</div>
+<%include ../partials/footer%>

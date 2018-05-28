@@ -1,0 +1,31 @@
+.form-control {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.centered {
+    text-align: center;
+}
+.centered-form {
+    width: 30%;
+    margin: 40px auto;
+}
+
+.thumbnail {
+    height: 100%;
+    overflow: auto;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+/*make edit and delete buttons appear on same line*/
+.delete-form {
+    display: inline;
+}

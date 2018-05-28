@@ -1,0 +1,19 @@
+<%include ../partials/header%>
+<h1 class="centered">add a new campground!</h1>
+<div class="centered-form">
+    <form action="/campgrounds/" method="post">
+        <div>
+            <input type="text" class="form-control" name="campground[name]" placeholder="campsite name">
+        </div>
+        <div>
+            <input type="text" class="form-control" name="campground[imageUrl]" placeholder="url of campsite image">
+        </div>
+        <div>
+            <input type="text" class="form-control" name="campground[description]" placeholder="description of campground">
+        </div>        
+        <div>
+            <input type="submit" class="btn btn-primary btn-md btn-block" value="add campsite!">
+        </div>
+    </form>
+</div>
+<%include ../partials/footer%>
