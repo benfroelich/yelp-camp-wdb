@@ -9,7 +9,7 @@ var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 // use mongoose to interact with the mongo database that stores campgrounds
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/yelp-camp");
+mongoose.connect(process.env.MONGODB_URI);
 // use to provide error data
 // passport libraries
 var passport                = require("passport"),
