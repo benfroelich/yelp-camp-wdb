@@ -7,9 +7,12 @@ var bodyParser = require('body-parser');
 // use method-override to adhere to the REST pattern
 var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
-// use mongoose to interact with the mongo database that stores campgrounds
+// use mongoose to interact with the mongo database for this app
 var mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI);
+// seperate the production and development databases to 
+// avoid messing with app users' data. And don't expose
+// any URLs from source code, for security
+mongoose.connect(process.env.DATABASE_URL);
 // use to provide error data
 // passport libraries
 var passport                = require("passport"),
