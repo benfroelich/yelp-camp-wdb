@@ -9,10 +9,13 @@ var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 // use mongoose to interact with the mongo database for this app
 var mongoose = require("mongoose");
+// add a default database in case the DATABASE_URL environment
+// variable isn't set
+var dbUrl = process.env.DATABASE_URL || "mongodb:localhost//yelp-camp";
 // seperate the production and development databases to 
 // avoid messing with app users' data. And don't expose
 // any URLs from source code, for security
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(dbUrl);
 // use to provide error data
 // passport libraries
 var passport                = require("passport"),
